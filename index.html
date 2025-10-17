@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Define el tipo de caracteres para mostrar acentos correctamente -->
+    <meta charset="UTF-8">
+    <!-- Hace que la página sea responsive (se adapte a móviles) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título que aparece en la pestaña del navegador -->
+    <title>PERFUMICHIC - Perfumes de Calidad</title>
+    <!-- Enlace al archivo de estilos CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Librería de íconos de Font Awesome (para carrito, WhatsApp, redes sociales) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+</head>
+<body>
+    
+    <!-- ===== BARRA DE NAVEGACIÓN ===== -->
+    <nav class="barra-navegacion">
+        <div class="contenedor-navegacion">
+            <!-- Logo de la tienda -->
+            <div class="logo">PERFUMICHIC</div>
+            
+            <!-- Menú de navegación -->
+            <ul class="enlaces-menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#carrito">Carrito</a></li>
+                <li><a href="#redes">Redes Sociales</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            
+            <!-- Ícono del carrito con contador -->
+            <div class="contenedor-icono-carrito">
+                <a href="#carrito" class="icono-carrito">
+                    <i class="fas fa-shopping-cart"></i>
+                    <!-- Muestra la cantidad de productos en el carrito -->
+                    <span class="contador-carrito" id="contador-carrito">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== SECCIÓN DE INICIO (HERO) ===== -->
+    <section class="seccion-inicio" id="inicio">
+        <div class="contenido-inicio">
+            <!-- Título principal -->
+            <h1 class="titulo-principal">PERFUMICHIC</h1>
+            
+            <!-- Contenedor donde aparecerán frases que rotan automáticamente -->
+            <div class="contenedor-subtitulo-animado" id="contenedor-frases-rotativas"></div>
+            
+            <!-- Estadísticas de la tienda -->
+            <div class="barra-estadisticas">
+                <div class="item-estadistica">
+                    <span>+1K</span>
+                    Clientes Felices
+                </div>
+                <div class="item-estadistica">
+                    <span>+50</span>
+                    Aromas Únicos
+                </div>
+                <div class="item-estadistica">
+                    <span>24/7</span>
+                    Soporte VIP
+                </div>
+            </div>
+            
+            <!-- Botón principal que lleva a la sección de productos -->
+            <a href="#productos" class="boton-principal">¡Encuentra tu Esencia!</a>
+        </div>
+    </section>
+
+    <!-- ===== SECCIÓN DE PRODUCTOS ===== -->
+    <section class="seccion" id="productos">
+        <h2 class="titulo-seccion">Nuestros Perfumes Destacados</h2>
+        
+        <!-- Cuadrícula de productos -->
+        <div class="cuadricula-productos">
+            
+            <!-- PRODUCTO 1: CHANEL N°5 -->
+            <div class="tarjeta-producto">
+                <!-- Imagen del producto (coloca tu foto aquí) -->
+                <img src="img/1.jpg" 
+                     alt="Chanel N°5" 
+                     class="imagen-producto">
+                
+                <!-- Nombre del producto -->
+                <h3>Chanel N°5</h3>
+                
+                <!-- Descripción -->
+                <p>El perfume más icónico del mundo. Floral aldehído con notas de jazmín, rosa y vainilla. Elegancia atemporal.</p>
+                
+                <!-- Precio -->
+                <span class="precio-producto">Bs 450.00</span>
+                
+                <!-- Botón para añadir al carrito -->
+                <button class="boton-anadir-carrito" 
+                        onclick="anadirAlCarrito('producto-001')"
+                        data-id="producto-001"
+                        data-nombre="Chanel N°5"
+                        data-precio="450.00"
+                        data-imagen="img/1.jpg">
+                    Añadir al Carrito
+                </button>
+            </div>
+
+            <!-- PRODUCTO 2: DIOR SAUVAGE -->
+            <div class="tarjeta-producto">
+                <img src="img/2.jpeg" 
+                     alt="Dior Sauvage" 
+                     class="imagen-producto">
+                
+                <h3>Dior Sauvage</h3>
+                <p>Fragancia masculina fresca y especiada. Pimienta de Sichuan, bergamota y ámbar. El más vendido del mundo.</p>
+                <span class="precio-producto">Bs 420.00</span>
+                
+                <button class="boton-anadir-carrito" 
+                        onclick="anadirAlCarrito('producto-002')"
+                        data-id="producto-002"
+                        data-nombre="Dior Sauvage"
+                        data-precio="420.00"
+                        data-imagen="img/2.jpeg">
+                    Añadir al Carrito
+                </button>
+            </div>
+
+            <!-- PRODUCTO 3: GOOD GIRL -->
+            <div class="tarjeta-producto">
+                <img src="img/3.jpg" 
+                     alt="Carolina Herrera Good Girl" 
+                     class="imagen-producto">
+                
+                <h3>Good Girl</h3>
+                <p>Carolina Herrera. Oriental floral con café, jazmín y almendra. Sensual y sofisticado. Botella icónica de tacón.</p>
+                <span class="precio-producto">Bs 480.00</span>
+                
+                <button class="boton-anadir-carrito" 
+                        onclick="anadirAlCarrito('producto-003')"
+                        data-id="producto-003"
+                        data-nombre="Good Girl"
+                        data-precio="480.00"
+                        data-imagen="img/3.jpg">
+                    Añadir al Carrito
+                </button>
+            </div>
+            
+            <!-- PRODUCTO 4: 1 MILLION -->
+            <div class="tarjeta-producto">
+                <img src="img/4.png" 
+                     alt="Paco Rabanne 1 Million" 
+                     class="imagen-producto">
+                
+                <h3>1 Million</h3>
+                <p>Paco Rabanne. Perfume masculino especiado dulce. Canela, cuero y ámbar. Irresistible y magnético.</p>
+                <span class="precio-producto">Bs 390.00</span>
+                
+                <button class="boton-anadir-carrito" 
+                        onclick="anadirAlCarrito('producto-004')"
+                        data-id="producto-004"
+                        data-nombre="1 Million"
+                        data-precio="390.00"
+                        data-imagen="img/4.png">
+                    Añadir al Carrito
+                </button>
+            </div>
+
+            <!-- PRODUCTO 5: VERSACE EROS -->
+            <div class="tarjeta-producto">
+                <img src="img/5.jpg" 
+                     alt="Versace Eros" 
+                     class="imagen-producto">
+                
+                <h3>Versace Eros</h3>
+                <p>Fragancia masculina fresca y amaderada. Menta, limón siciliano y vainilla. Pasión y poder mediterráneo.</p>
+                <span class="precio-producto">Bs 380.00</span>
+                
+                <button class="boton-anadir-carrito" 
+                        onclick="anadirAlCarrito('producto-005')"
+                        data-id="producto-005"
+                        data-nombre="Versace Eros"
+                        data-precio="380.00"
+                        data-imagen="img/5.jpg">
+                    Añadir al Carrito
+                </button>
+            </div>
+
+            <!-- PRODUCTO 6: LE MALE -->
+            <div class="tarjeta-producto">
+                <img src="img/6.jpg" 
+                     alt="Jean Paul Gaultier Le Male" 
+                     class="imagen-producto">
+                
+                <h3>Le Male</h3>
+                <p>Jean Paul Gaultier. Oriental fougère con lavanda, menta y vainilla. Icónico frasco de marinero. Clásico atemporal.</p>
+                <span class="precio-producto">Bs 370.00</span>
+                
+                <button class="boton-anadir-carrito" 
+                        onclick="anadirAlCarrito('producto-006')"
+                        data-id="producto-006"
+                        data-nombre="Le Male"
+                        data-precio="370.00"
+                        data-imagen="img/6.jpg">
+                    Añadir al Carrito
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECCIÓN DEL CARRITO ===== -->
+    <section class="seccion" id="carrito">
+        <h2 class="titulo-seccion">Tu Carrito de Compras</h2>
+        
+        <!-- Lista donde aparecerán los productos del carrito -->
+        <ul class="lista-carrito" id="lista-carrito"></ul>
+
+        <!-- Resumen con el total y botón de finalizar compra -->
+        <div class="resumen-carrito">
+            <h3>Total a Pagar: Bs <span id="total-carrito">0.00</span></h3>
+            <button class="boton-finalizar-compra">Finalizar Compra</button>
+        </div>
+    </section>
+
+    <!-- ===== SECCIÓN: REDES SOCIALES CON QR ===== -->
+    <section class="seccion" id="redes">
+        <h2 class="titulo-seccion">Síguenos en Redes Sociales</h2>
+        
+        <div class="contenedor-redes">
+            <!-- Texto descriptivo -->
+            <div class="texto-redes">
+                <h3>¡Conéctate con PERFUMICHIC!</h3>
+                <p>Síguenos en nuestras redes sociales para recibir:</p>
+                <ul class="lista-beneficios">
+                    <li><i class="fas fa-check"></i> Promociones exclusivas</li>
+                    <li><i class="fas fa-check"></i> Nuevos lanzamientos</li>
+                    <li><i class="fas fa-check"></i> Tips de fragancias</li>
+                    <li><i class="fas fa-check"></i> Sorteos y concursos</li>
+                </ul>
+                
+                <!-- Íconos de redes sociales clickeables -->
+                <div class="iconos-redes-grandes">
+                    <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/" target="_blank" aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://wa.me/59164384438" target="_blank" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Contenedor del código QR -->
+            <div class="contenedor-qr">
+                <h3>Escanea el QR</h3>
+                <div class="caja-qr">
+                    <!-- AQUÍ DEBES COLOCAR LA RUTA DE TU IMAGEN QR -->
+                    <!-- Ejemplo: <img src="mi-qr.png" alt="Código QR"> -->
+                    <img src="img/Perfumichic.jpg" alt="Código QR de PERFUMICHIC" class="imagen-qr">
+                </div>
+                <p class="instruccion-qr">Escanea con tu celular para seguirnos</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECCIÓN NOSOTROS ===== -->
+    <section class="seccion" id="nosotros">
+        <h2 class="titulo-seccion">Nuestra Historia</h2>
+        <p class="texto-nosotros">
+            En <strong>PERFUMICHIC</strong>, creemos que cada persona merece una fragancia que resalte su personalidad y estilo único. Fundada en 2024
+             con la pasión por los aromas exclusivos, nos hemos dedicado a seleccionar solo los mejores perfumes de marcas reconocidas mundialmente, garantizando calidad, autenticidad y precios accesibles. Nuestro compromiso es brindarte una experiencia de compra tan placentera como el aroma que elijas.
+        </p>
+    </section>
+
+    <!-- ===== SECCIÓN DE CONTACTO ===== -->
+    <section class="seccion" id="contacto">
+        <h2 class="titulo-seccion">Contáctanos</h2>
+        
+        <div class="informacion-contacto">
+            <p>¿Tienes alguna pregunta? Escríbenos directamente por WhatsApp</p>
+        </div>
+        
+        <!-- Formulario de contacto que envía a WhatsApp -->
+        <form class="formulario-contacto" id="formulario-contacto">
+            <!-- Campo para el nombre -->
+            <label for="nombre">Tu Nombre:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ej: María Pérez" required>
+            
+            <!-- Campo para el email -->
+            <label for="correo">Tu Correo Electrónico:</label>
+            <input type="email" id="correo" name="correo" placeholder="Ej: maria@gmail.com" required>
+            
+            <!-- Campo para el mensaje -->
+            <label for="mensaje">Tu Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu consulta aquí..." required></textarea>
+            
+            <!-- Botón de envío con ícono de WhatsApp -->
+            <button type="submit" class="boton-enviar">
+                <i class="fab fa-whatsapp"></i> Enviar por WhatsApp
+            </button>
+        </form>
+    </section>
+
+    <!-- ===== VENTANA EMERGENTE DE FINALIZAR COMPRA ===== -->
+    <div id="ventana-finalizar" class="ventana-emergente">
+        <div class="contenido-ventana">
+            <!-- Botón para cerrar la ventana -->
+            <span class="boton-cerrar">&times;</span>
+            <h2>Finalizar Pedido</h2>
+            
+            <!-- Formulario para completar los datos del pedido -->
+            <form id="formulario-pedido" class="formulario-pedido">
+                <!-- Aquí se muestra el resumen del pedido -->
+                <div id="resumen-pedido"></div>
+
+                <!-- Campo para el nombre del cliente -->
+                <label for="nombre-pedido">Tu Nombre:</label>
+                <input type="text" id="nombre-pedido" placeholder="Ej: Juan Pérez" required>
+                
+                <!-- Campo para el teléfono -->
+                <label for="telefono-pedido">Tu Teléfono (WhatsApp):</label>
+                <input type="tel" id="telefono-pedido" placeholder="Ej: 591 6xxxxxxx" required>
+                
+                <!-- Campo para la dirección -->
+                <label for="direccion-pedido">Dirección de Entrega:</label>
+                <input type="text" id="direccion-pedido" placeholder="Ej: Av. Principal N° 123" required>
+                
+                <!-- Botón de envío a WhatsApp -->
+                <button type="submit" class="boton-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Enviar Pedido por WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ===== BOTÓN FLOTANTE DE WHATSAPP ===== -->
+    <div class="whatsapp-flotante">
+        <i class="fab fa-whatsapp"></i>
+        <div class="tooltip-whatsapp">¡Escríbenos por WhatsApp!</div>
+    </div>
+
+    <!-- ===== PIE DE PÁGINA ===== -->
+    <footer class="pie-pagina">
+        <div class="contenido-pie">
+            <h3>PERFUMICHIC</h3>
+            <p>Tu esencia perfecta te está esperando</p>
+            
+            <!-- Enlaces a redes sociales -->
+            <div class="enlaces-redes">
+                <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://wa.me/59164384438" target="_blank" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://www.tiktok.com/" target="_blank" aria-label="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </div>
+            
+            <!-- Derechos de autor -->
+            <p>&copy; 2025 PERFUMICHIC. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Enlace al archivo JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
